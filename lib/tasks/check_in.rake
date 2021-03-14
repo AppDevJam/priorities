@@ -5,9 +5,12 @@ task ({:check_in => :environment}) do
   today_priorities = Priority.where(:day => cutoff_date)
 
   # Send alert if it is past 12pm and an alert has not been sent yet 
+  
+  
   need_reminder_priorities = today_priorities.where({ :alert_sent => false})
 
   p need_reminder_priorities.count
+
 
   need_reminder_priorities.each do |a_priority|
     p a_priority.description
