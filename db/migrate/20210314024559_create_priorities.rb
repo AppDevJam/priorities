@@ -4,7 +4,7 @@ class CreatePriorities < ActiveRecord::Migration[6.0]
       t.string :description
       t.date :day
       t.integer :user_id
-      t.boolean :alert_sent
+      t.boolean :alert_sent, { :default => false }
 
       t.timestamps
     end

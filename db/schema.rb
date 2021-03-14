@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2021_03_14_024559) do
     t.string "description"
     t.date "day"
     t.integer "user_id"
-    t.boolean "alert_sent"
+    t.boolean "alert_sent", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

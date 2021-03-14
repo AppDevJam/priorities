@@ -3,7 +3,7 @@
 # Table name: priorities
 #
 #  id          :integer          not null, primary key
-#  alert_sent  :boolean
+#  alert_sent  :boolean          default(FALSE)
 #  day         :date
 #  description :string
 #  created_at  :datetime         not null
