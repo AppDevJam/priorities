@@ -18,17 +18,18 @@ class PrioritiesController < ApplicationController
   end
 
   def create
-    the_priority = Priority.new
-    the_priority.description = params.fetch("query_description")
-    the_priority.day = params.fetch("query_day")
-    the_priority.user_id = params.fetch("query_user_id")
-    the_priority.alert_sent = params.fetch("query_alert_sent", false)
+      the_priority = Priority.new
+      the_priority.description = params.fetch("query_description")
+      the_priority.day = params.fetch("query_day")
+      the_priority.user_id = @current_user.id
+      the_priority.alert_sent = params.fetch("query_alert_sent", false)
+  
 
     if the_priority.valid?
       the_priority.save
       redirect_to("/priorities", { :notice => "Priority created successfully." })
     else
-      redirect_to("/priorities", { :notice => "Priority failed to create successfully." })
+      redirect_to("/priorities", { :notice => the_priority.errors.full_messages.to_sentence })
     end
   end
 
