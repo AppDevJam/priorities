@@ -14,6 +14,4 @@ class Priority < ApplicationRecord
   belongs_to(:user, { :required => true, :class_name => "User", :foreign_key => "user_id" })
 
   validates(:day, { :presence => true })
-  validates(:alert_sent, { :presence => true })
-
 end

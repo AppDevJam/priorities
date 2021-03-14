@@ -1,6 +1,6 @@
 class PrioritiesController < ApplicationController
   def index
-    matching_priorities = Priority.all
+    matching_priorities = @current_user.priorities
 
     @list_of_priorities = matching_priorities.order({ :created_at => :desc })
 
@@ -22,8 +22,7 @@ class PrioritiesController < ApplicationController
       the_priority.description = params.fetch("query_description")
       the_priority.day = params.fetch("query_day")
       the_priority.user_id = @current_user.id
-      the_priority.alert_sent = params.fetch("query_alert_sent", false)
-  
+ 
 
     if the_priority.valid?
       the_priority.save
