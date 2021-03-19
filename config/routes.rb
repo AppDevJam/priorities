@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  get("/", { :controller => "priorities", :action => "index"})
+  get("/", { :controller => "pages", :action => "hello"})
 
   # Routes for the Priority resource:
 

@@ -15,9 +15,21 @@
             Resources
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a href="/priorities" class="dropdown-item">
-              Priorities
+            <a href="/" class="dropdown-item">
+              Welcome
             </a>
+            <a href="/priorities" class="dropdown-item">
+              Your Priorities
+            </a>
+            <% if @current_user == nil %>
+            <a href="/user_sign_in" class="dropdown-item">
+              Sign in
+            </a>
+            <% else %>
+            <a href="/user_sign_out" class="dropdown-item">
+              Sign out
+            </a>
+            <% end %>
           </div>
         </li>
       </ul>
