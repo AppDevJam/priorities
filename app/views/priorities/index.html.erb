@@ -43,32 +43,17 @@
   <div>
     <table>
       <tr>
-        <th>
-          ID
-        </th>
-
+        
         <th>
           Description
         </th>
 
         <th>
-          Day
-        </th>
-
-        <th>
-          User
+          Priority for
         </th>
 
         <th>
           Priority accomplished?
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
         </th>
 
         <th>
@@ -77,10 +62,7 @@
 
       <% @list_of_priorities.each do |a_priority| %>
       <tr>
-        <td>
-          <%= a_priority.id %>
-        </td>
-
+        
         <td>
           <%= a_priority.description %>
         </td>
@@ -90,18 +72,7 @@
         </td>
 
         <td>
-          <%= a_priority.user_id %>
-        </td>
-
-        <td>
           <%= a_priority.priority_accomplished %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_priority.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_priority.updated_at) %> ago
         </td>
 
         <td>
