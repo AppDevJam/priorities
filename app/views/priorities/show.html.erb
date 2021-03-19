@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      Priority #<%= @the_priority.id %> details
+      Details of your <%= @the_priority.description %> priority
     </h1>
 
     <div>
@@ -27,40 +27,20 @@
       </dd>
 
       <dt>
-        Day
+        Priority for
       </dt>
       <dd>
-        <%= @the_priority.day %>
+        <%= @the_priority.day.strftime("%A, %b %eth") %>
       </dd>
 
       <dt>
-        User
+        Priority accomplished?
       </dt>
       <dd>
-        <%= @the_priority.user_id %>
+        <%= @the_priority.priority_accomplished.to_s.capitalize %>
       </dd>
 
-      <dt>
-        Alert sent
-      </dt>
-      <dd>
-        <%= @the_priority.priority_accomplished %>
-      </dd>
-
-      <dt>
-        Created at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_priority.created_at) %> ago
-      </dd>
-
-      <dt>
-        Updated at
-      </dt>
-      <dd>
-        <%= time_ago_in_words(@the_priority.updated_at) %> ago
-      </dd>
-    </dl>
+      </dl>
   </div>
 </div>
 
@@ -91,11 +71,7 @@
       </div>
 
       <div>
-        <label for="user_id_box">
-          User
-        </label>
-
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_priority.user_id %>">
+        <input type="hidden" id="user_id_box" name="query_user_id" value="<%= @the_priority.user_id %>">
       </div>
 
       <div>
