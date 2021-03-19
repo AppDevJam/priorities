@@ -68,11 +68,11 @@
         </td>
 
         <td>
-          <%= a_priority.day %>
+          <%= a_priority.day.strftime("%A, %b %eth") %>
         </td>
 
         <td>
-          <%= a_priority.priority_accomplished %>
+          <%= a_priority.priority_accomplished.to_s.capitalize %>
         </td>
 
         <td>
