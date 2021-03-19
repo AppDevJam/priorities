@@ -44,7 +44,7 @@
         Alert sent
       </dt>
       <dd>
-        <%= @the_priority.alert_sent %>
+        <%= @the_priority.priority_accomplished %>
       </dd>
 
       <dt>
@@ -99,10 +99,10 @@
       </div>
 
       <div>
-        <input type="checkbox" id="alert_sent_box" name="query_alert_sent" value="1" <%= "checked" if @the_priority.alert_sent %>>
+        <input type="checkbox" id="priority_accomplished_box" name="query_priority_accomplished" value="1" <%= "checked" if @the_priority.priority_accomplished %>>
 
         <label for="alert_sent_box">
-            Alert sent
+            Priority accomplished
         </label>
       </div>
 

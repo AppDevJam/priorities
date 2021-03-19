@@ -39,7 +39,7 @@ class PrioritiesController < ApplicationController
     the_priority.description = params.fetch("query_description")
     the_priority.day = params.fetch("query_day")
     the_priority.user_id = params.fetch("query_user_id")
-    the_priority.alert_sent = params.fetch("query_alert_sent", false)
+    the_priority.priority_accomplished = params.fetch("query_priority_accomplished", false)
 
     if the_priority.valid?
       the_priority.save
